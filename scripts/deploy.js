@@ -36,3 +36,6 @@ main()
     console.error(err);
     process.exit(1);
   });
+
+// Note: You can also use the terminal to run the code lines by just using "yarn hardhat console --network goerli"
+// the console works in any network you have configured in your hardhat.config.js file.
