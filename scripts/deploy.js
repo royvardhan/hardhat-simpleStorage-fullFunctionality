@@ -7,6 +7,7 @@ async function main() {
   await simpleStorage.deployed();
   console.log("SimpleStorage deployed at:", simpleStorage.address);
   if (network.config.chainId === 5 && process.env.ETHERSCAN_API_KEY) {
+    await simpleStorage.deployTransaction.wait(6); // will wait for 6 blocks before running the verification/nextline
     await verify(simpleStorage.address, []);
   }
 }
