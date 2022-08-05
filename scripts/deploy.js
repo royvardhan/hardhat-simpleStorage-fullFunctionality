@@ -10,6 +10,15 @@ async function main() {
     await simpleStorage.deployTransaction.wait(6); // will wait for 6 blocks before running the verification/nextline
     await verify(simpleStorage.address, []);
   }
+
+  //we will now interact with the smart contract
+
+  const currentVal = await simpleStorage.retrieve();
+  console.log("Current value:", currentVal);
+
+  const newVal = await simpleStorage.store(42);
+  await newVal.wait(1);
+  console.log("New value:", await simpleStorage.retrieve());
 }
 
 async function verify(contratAddress, args) {
