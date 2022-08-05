@@ -23,6 +23,14 @@ describe("SimpleStorage", () => {
     const currentVal = await simpleStorage.retrieve();
     assert.equal(currentVal.toString(), expectedVal);
   });
+  it.only("Should add person", async () => {
+    const res = await simpleStorage.addPerson("Roy", 7);
+    await res.wait(1);
+    const people = await simpleStorage.people([0]);
+    const expectedVal = "Roy";
+    const currentVal = await people.name;
+    assert.equal(currentVal.toString(), expectedVal);
+  });
 });
 
 // If you want to run only one test, then use "yarn hardhat test --grep testname/keywork"
