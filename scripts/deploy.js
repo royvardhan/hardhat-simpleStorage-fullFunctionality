@@ -11,7 +11,7 @@ async function main() {
     await verify(simpleStorage.address, []);
   }
 
-  //we will now interact with the smart contract
+  // we will now interact with the smart contract
 
   const currentVal = await simpleStorage.retrieve();
   console.log("Current value:", currentVal);
