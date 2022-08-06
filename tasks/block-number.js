@@ -6,3 +6,5 @@ task("block-number", "Prints the current block number").setAction(
     console.log("Current Block Number: " + blockNumber);
   }
 );
+
+// this function can also be run individually
